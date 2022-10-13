@@ -3,8 +3,8 @@ import React, { useCallback, useReducer } from "react";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
 import {
-  VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
+  VALIDATOR_MINLENGTH,
 } from "../../shared/util/validators";
 import "./NewPlace.css";
 
@@ -23,7 +23,7 @@ const formReducer = (state, action) => {
         ...state,
         inputs: {
           ...state.inputs,
-          [action.inputId]: { value: action.value, isInvalid: action.isValid },
+          [action.inputId]: { value: action.value, isValid: action.isValid },
         },
         isValid: formIsValid,
       };
@@ -75,7 +75,9 @@ const NewPlace = () => {
         errorText="Please enter a valid description (at least 5 characters)."
         onInput={inputHandler}
       />
-      <Button type="submit" disabled={!formState.isValid}>ADD PLACE</Button>
+      <Button type="submit" disabled={!formState.isValid}>
+        ADD PLACE
+      </Button>
     </form>
   );
 };
