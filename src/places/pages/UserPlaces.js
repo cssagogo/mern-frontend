@@ -7,7 +7,7 @@ const DUMMY_PLACES = [{
     id: "p1",
     title: "Empire State Building",
     description: "Most popular building in the world!",
-    imageUrl: "https://lh5.googleusercontent.com/p/AF1QipNVlM5lo7fIJrmvjN4EOrTMiQjDgDyTfw7ATdV6=w408-h272-k-no",
+    imageUrl: "https://images.unsplash.com/photo-1555109307-f7d9da25c244?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
     address: "20 W 34th St., New York, NY 10001",
     location: {
         lat: 40.7484445,
@@ -19,7 +19,7 @@ const DUMMY_PLACES = [{
     id: "p2",
     title: "Empire State Building",
     description: "Most popular building in the world!",
-    imageUrl: "https://lh5.googleusercontent.com/p/AF1QipNVlM5lo7fIJrmvjN4EOrTMiQjDgDyTfw7ATdV6=w408-h272-k-no",
+    imageUrl: "https://images.unsplash.com/photo-1555109307-f7d9da25c244?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
     address: "20 W 34th St., New York, NY 10001",
     location: {
         lat: 40.7484445,
