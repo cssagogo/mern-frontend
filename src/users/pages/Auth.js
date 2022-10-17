@@ -1,57 +1,60 @@
-import React from "react";
+import React from 'react';
 
-import Card from "../../shared/components/UIElements/Card";
-import Input from "../../shared/components/FormElements/Input";
-import Button from "../../shared/components/FormElements/Button";
-import { VALIDATOR_EMAIL, VALIDATOR_MIN } from "../../shared/util/validators";
-import { useForm } from "../../shared/hooks/form-hook";
-import "./Auth.css";
+import Card from '../../shared/components/UIElements/Card';
+import Input from '../../shared/components/FormElements/Input';
+import Button from '../../shared/components/FormElements/Button';
+import {
+  VALIDATOR_EMAIL,
+  VALIDATOR_MINLENGTH
+} from '../../shared/util/validators';
+import { useForm } from '../../shared/hooks/form-hook';
+import './Auth.css';
 
 const Auth = () => {
   const [formState, inputHandler] = useForm(
     {
       email: {
-        value: "",
-        isValid: false,
+        value: '',
+        isValid: false
       },
       password: {
-        value: "",
-        isValid: false,
-      },
+        value: '',
+        isValid: false
+      }
     },
     false
   );
 
-  const authSubmitHandler = (event) => {
+  const authSubmitHandler = event => {
     event.preventDefault();
     console.log(formState.inputs);
   };
 
   return (
     <Card className="authentication">
-      <h2 className="authentication__header">Login Required</h2>
+      <h2>Login Required</h2>
       <hr />
-      <form className="auth-form" onSubmit={authSubmitHandler}>
+      <form onSubmit={authSubmitHandler}>
         <Input
-          id="email"
           element="input"
-          label="Email"
-          type="text"
+          id="email"
+          type="email"
+          label="E-Mail"
           validators={[VALIDATOR_EMAIL()]}
           errorText="Please enter a valid email address."
           onInput={inputHandler}
         />
         <Input
-          id="password"
           element="input"
-          label="Password"
+          id="password"
           type="password"
-          validators={[VALIDATOR_MIN(7)]}
-          errorText="Please enter a valid password. Minimum 7 characters."
+          label="Password"
+          validators={[VALIDATOR_MINLENGTH(5)]}
+          errorText="Please enter a valid password, at least 5 characters."
           onInput={inputHandler}
         />
         <Button type="submit" disabled={!formState.isValid}>
-          Log In
+          LOGIN
         </Button>
       </form>
     </Card>
