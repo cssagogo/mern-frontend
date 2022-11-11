@@ -15,7 +15,6 @@ const UserPlaces = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        console.log(`http://localhost:5000/api/places/user/${userId}`);
         const responseData = await sendRequest(
           `http://localhost:5000/api/places/user/${userId}`
         );
