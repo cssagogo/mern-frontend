@@ -64,7 +64,7 @@ const UpdatePlace = () => {
   const placeUpdateSubmitHandler = async (event) => {
     event.preventDefault();
     try {
-      const responseData = await sendRequest(
+      await sendRequest(
         `http://localhost:5000/api/places/${placeId}`,
         "PATCH",
         JSON.stringify({
